@@ -33,13 +33,13 @@ if (isset($_POST["nick"]))
 	//Inserción de datos
 	
 	//Primero compruebo si el nick existe
-	$instruccion = "select count(*) as cuantos from register where nick = '$nick'";
+	$instruccion = "select count(*) as cuantos from usuarios where nick = '$nick'";
 	$res = mysqli_query($con, $instruccion);
 	$datos = mysqli_fetch_assoc($res);
 	
 	if ($datos['cuantos'] == 0)
 	{
-		$instruccion = "insert into register values ('$nick','$mail','$pass','$confirmpass')";
+		$instruccion = "insert into usuarios values ('$nick','$mail','$pass','$confirmpass')";
 		$res = mysqli_query($con, $instruccion);
 		if (!$res) 
 		{
