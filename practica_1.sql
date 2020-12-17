@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-12-2020 a las 18:58:24
+-- Tiempo de generación: 17-12-2020 a las 18:30:37
 -- Versión del servidor: 5.6.13
 -- Versión de PHP: 5.4.17
 
@@ -25,21 +25,10 @@ USE `practica_1`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `login`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `login` (
-  `nick` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` varchar(15) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `register`
---
-
-CREATE TABLE IF NOT EXISTS `register` (
+CREATE TABLE IF NOT EXISTS `usuarios` (
   `nick` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `mail` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `pass` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -47,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `register` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `register`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `register` (`nick`, `mail`, `pass`, `confirmpass`) VALUES
+INSERT INTO `usuarios` (`nick`, `mail`, `pass`, `confirmpass`) VALUES
 ('prueba', 'prueba@gmail.com', 'prueba123', 'prueba123');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
