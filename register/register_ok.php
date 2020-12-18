@@ -11,8 +11,8 @@ if (isset($_POST["nick"]))
 	$bd = "practica_1";
 
 	$nick = $_POST["nick"];
-	$pass = $_POST["pass"];
 	$mail = $_POST["mail"];
+	$pass = $_POST["pass"];
 	$confirmpass = $_POST["confirmpass"];
 	
 
@@ -31,13 +31,17 @@ if (isset($_POST["nick"]))
 	//////////////////////////////////////
 	
 	//Inserción de datos
-	
+
 	//Primero compruebo si el nick existe
 	$instruccion = "select count(*) as cuantos from usuarios where nick = '$nick'";
 	$res = mysqli_query($con, $instruccion);
 	$datos = mysqli_fetch_assoc($res);
 	
-	if ($datos['cuantos'] == 0)
+	if ($_POST["pass"] !== $_POST["confirmpass"]) { 
+		echo "La contraseña no coincide con confirmar contraseña <br>";
+	  } 
+
+	else if ($datos['cuantos'] == 0)
 	{
 		$instruccion = "insert into usuarios values ('$nick','$mail','$pass','$confirmpass')";
 		$res = mysqli_query($con, $instruccion);
@@ -50,12 +54,12 @@ if (isset($_POST["nick"]))
 			echo "Usuario creado";
 			//me lleva al login para que pruebe mi contraseña
 			echo "<script>alert('Usuario creado correctamente');</script>";
-			include_once("login.html");
+			include_once("../log-register/login.html");
 		}
 	}
 	else
 	{
-		echo "El nick $nick no está disponible";
+		echo "El nick $nick ya esta en uso, prueba con otro nick <br>";
 	}
 
 }
@@ -63,4 +67,5 @@ else
 {
 	echo ("ERROR: No se puede introducir un nick en blanco");
 }
+
 ?>

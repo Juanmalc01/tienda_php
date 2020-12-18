@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-12-2020 a las 18:30:37
+-- Tiempo de generación: 18-12-2020 a las 17:45:17
 -- Versión del servidor: 5.6.13
 -- Versión de PHP: 5.4.17
 
@@ -40,7 +40,17 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`nick`, `mail`, `pass`, `confirmpass`) VALUES
-('prueba', 'prueba@gmail.com', 'prueba123', 'prueba123');
+('prueba', 'prueba@gmail.com', 'prueba123', 'prueba123'),
+('prueba2', 'prueba2@gmail.com', 'prueba2', '123421341234'),
+('prueba3', 'prueba3@gmail.com', 'prueba3', '134qw123'),
+('prueba4', 'prueba4@gmail.com', 'prueba4', '123412342qewes3'),
+('prueba5', 'prueba5@gmail.com', 'prueba5', '213ews23r32'),
+('a', 'a@gmail.com', 'a123', 'a123'),
+('asdf', 'asdf@asdf', 'asdf', 'asdf'),
+('q', 'q@q', 'q123', 'q123'),
+('z', 'z@z', 'z123', 'z123'),
+('w', 'w@w', 'w123', 'w123'),
+('alex', 'alex@gmail', 'alex123', 'alex123');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

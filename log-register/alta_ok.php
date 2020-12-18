@@ -39,7 +39,7 @@ if ($numero == 0) {
 	/////////////////
 
 	if ((strcmp($password, $pass) !== 0) || $pass == "") {
-		echo "Contraseña incorrecta";
+		echo "Contrasena incorrecta";
 	} else {
 		$_SESSION["nick_logueado"] = $nick;
 ?>
