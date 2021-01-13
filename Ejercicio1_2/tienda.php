@@ -2,7 +2,7 @@
 require_once __DIR__ . '/db_config.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -28,6 +28,7 @@ require_once __DIR__ . '/db_config.php';
                 <div>
                     <a href="showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="showProfile.php" class="btn btn-primary">Perfil</a>
+                    <a href="" class="btn btn-success">Administrador</a>
                     <a href="/logout.php" class="btn btn-danger">Cerrar sesion</a>
                 </div>
             </div>

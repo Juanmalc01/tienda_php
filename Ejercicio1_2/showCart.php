@@ -4,7 +4,7 @@ require_once __DIR__ . '/db_config.php';
 $total = 0;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
