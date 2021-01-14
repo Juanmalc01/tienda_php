@@ -23,12 +23,13 @@ require_once __DIR__ . '/db_config.php';
 
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <a href="tienda.php" class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
                 <div>
                     <a href="showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="showProfile.php" class="btn btn-primary">Perfil</a>
+                    <a href="" class="btn btn-success">Administrador</a>
                     <a href="/logout.php" class="btn btn-danger">Cerrar sesion</a>
                 </div>
             </div>

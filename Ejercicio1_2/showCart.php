@@ -47,7 +47,7 @@ $total = 0;
         <div class="album py-5 bg-light">
             <div class="container">
             <?php
-             $instruccion = "select * from compras left join usuarios on 'compras.usuario_id' = usuarios.id left join productos on productos.id = producto_id where fecha is null and usuario_id =" . $_SESSION['id'];
+             $instruccion = "select * from compras_".$_SESSION['id']." left join productos on productos.id = producto_id where fecha is null";
              $resultado = mysqli_query($con, $instruccion);
                 if($resultado->num_rows > 0){
             ?>

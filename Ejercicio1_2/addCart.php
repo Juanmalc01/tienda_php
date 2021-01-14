@@ -6,15 +6,15 @@ if (isset($_POST["id"]) && isset($_POST["cantidad"])){
 	$res = mysqli_query($con, $instruccion);
     $datos = mysqli_fetch_assoc($res);
 
-    $instruccion = "select * from compras where producto_id = '".$_POST['id']."' and fecha is null and usuario_id = ".$_SESSION['id'].";";
+    $instruccion = "select * from compras_".$_SESSION['id']." where producto_id = '".$_POST['id']."' and fecha is null;";
 	$res = mysqli_query($con, $instruccion);
     $compras = mysqli_fetch_assoc($res);
     if($res->num_rows > 0){
         $cantidad = intval($compras['cantidad'])+ intval($_POST["cantidad"]);
-        $instruccion = "UPDATE compras SET cantidad = ".$cantidad.", total = ".($datos['precio'] * $cantidad)
-        ." WHERE fecha is null and usuario_id = ".$_SESSION['id']." and producto_id = ".$_POST["id"].";";
+        $instruccion = "UPDATE compras_".$_SESSION['id']." SET cantidad = ".$cantidad.", total = ".($datos['precio'] * $cantidad)
+        ." WHERE fecha is null and producto_id = ".$_POST["id"].";";
     }else{
-        $instruccion = "insert into compras (usuario_id,producto_id,cantidad,total) values ('".$_SESSION['id']."','".$_POST['id']."','".$_POST["cantidad"].
+        $instruccion = "insert into compras_".$_SESSION['id']." (producto_id,cantidad,total) values ('".$_POST['id']."','".$_POST["cantidad"].
         "','".($datos['precio'] * intval($_POST["cantidad"]))."')";
     }
 

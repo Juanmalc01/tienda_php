@@ -32,7 +32,16 @@ if (isset($_POST["nick"]))
 		}
 		else
 		{
-			echo "Usuario creado";
+		$instruccion = "CREATE TABLE IF NOT EXISTS `compras_".$con->insert_id."` (
+		  `producto_id` int(10) UNSIGNED NOT NULL,
+		  `cantidad` int(11) NOT NULL,
+		  `total` decimal(10,2) NOT NULL,
+		  `fecha` timestamp NULL DEFAULT NULL,
+		  KEY `fk_compra_producto` (`producto_id`)
+		);";
+		$instruccion .=" ALTER TABLE `compras_".$con->insert_id."`
+		  ADD CONSTRAINT `fk_compra_producto` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE CASCADE;";
+			mysqli_multi_query($con, $instruccion);
 			header("Location: login.html?alert=Usuario creado correctamente");
 		}
 	}
