@@ -29,7 +29,7 @@ require_once __DIR__ . '/db_config.php';
                     <a href="showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="showProfile.php" class="btn btn-primary">Perfil</a>
                     <a href="administrador.php" class="btn btn-success">Administrador</a>
-                    <a class="btn btn-secondary" href="administrarUsuarios.php">Gestionar usuarios</a>
+                    <a class="btn btn-secondary" href="administrador.php">Gestionar productos</a>
                     <a href="/logout.php" class="btn btn-danger">Cerrar sesion</a>
                 </div>
             </div>
@@ -40,8 +40,8 @@ require_once __DIR__ . '/db_config.php';
 
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">Administrar producto</h1>
-                <a class="btn btn-secondary" href="Productos/FormularioCrearProducto.php">Crear producto</a>
+                <h1 class="jumbotron-heading">Administrar usuarios</h1>
+                <a class="btn btn-secondary" href="Usuarios/FormularioCrearUsuario.php">Crear usuario</a>
                                   
             </div>
         </section>
@@ -49,30 +49,29 @@ require_once __DIR__ . '/db_config.php';
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row">
-                    <?php
+
+                <?php
                     $order = isset($_GET['desc']) ? 'desc' : 'asc';
-                    $instruccion = "select * from productos order by precio ".$order;
+                    $instruccion = "select * from usuarios order by nick ".$order;
                     $resultado = mysqli_query($con, $instruccion);
                     while ($fila = $resultado->fetch_assoc()) {
 
                     ?>
 
-                        <div class="col-md-4 producto <?php echo ($fila['categoria']); ?>">
+                        <div class="col-md-4 producto <?php echo ($fila['email']); ?>">
                             <div class="card mb-4 box-shadow">
                                 <div class="card-body">
-                                    <h1><?php echo ($fila['nombre']); ?></h1>
-                                    <span class="badge badge-info"><?php echo ($fila['categoria']); ?></span>
-                                    <p class="card-text"><?php echo ($fila['descripcion']); ?></p>
+                                    <h1><?php echo ($fila['nick']); ?></h1>
+                                    <span class="badge badge-info"><?php echo ($fila['email']); ?></span>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <div class="input-group mb-3">
                                                     <div class="input-group-append">
-                                                        <a href="Productos/eliminarProducto.php?id=<?php echo ($fila['id']);?>" class="btn btn-danger">Eliminar</a>
-                                                        <a href="Productos/FormularioModificarProducto.php?id=<?php echo ($fila['id']);?>" class="btn btn-sm btn-outline-secondary">Modificar</a>
+                                                        <a href="Usuarios/eliminarUsuario.php?id=<?php echo ($fila['id']);?>" class="btn btn-danger">Eliminar</a>
+                                                        <a href="Usuarios/FormularioModificarUsuario.php?id=<?php echo ($fila['id']);?>" class="btn btn-sm btn-outline-secondary">Modificar</a>
                                                     </div>
                                             </div>
                                         </div>
-                                        <small class="text-muted"><?php echo ($fila['precio']); ?> €</small>
                                     </div>
                                 </div>
                             </div>

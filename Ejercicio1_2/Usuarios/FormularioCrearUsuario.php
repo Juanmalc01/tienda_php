@@ -1,8 +1,5 @@
 <?php
 include '/db_config.php';
-$id = $_GET=["id"];
-$instruccion = "SELECT * FROM productos WHERE id = $id";
-$res = mysqli_query($con, $instruccion);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,7 +29,7 @@ $res = mysqli_query($con, $instruccion);
                     <a href="../showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="../showProfile.php" class="btn btn-primary">Perfil</a>
                     <a href="../administrador.php" class="btn btn-success">Administrador</a>
-                    <a class="btn btn-secondary" href="administrarUsuarios.php">Gestionar usuarios</a>
+                    <a class="btn btn-secondary" href="administrador.php">Gestionar productos</a>
                     <a href="../logout.php" class="btn btn-danger">Cerrar sesion</a>
                 </div>
             </div>
@@ -41,29 +38,24 @@ $res = mysqli_query($con, $instruccion);
 
     <div class="container">
         <br>
-            <form action="crearProducto.php" method = "post">
+            <form action="crearUsuario.php" method = "post">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                    <label for="exampleInputEmail1">Nick</label>
+                    <input type="text" class="form-control" name="nick" aria-describedby="emailHelp" placeholder="Nick">
                 </div>
                 <div class="form-group">
-                <label for="inputState">Categoria</label>
-                <select name="categoria" class="form-control">
-                    <option selected disabled>Selecciona una</option>
-                    <option>Viento</option>
-                    <option>Cuerda</option>
-                    <option>Percusion</option>
-                </select>
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Descripcion</label>
-                    <input type="text" class="form-control" name="descripcion" aria-describedby="emailHelp" placeholder="Descripcion">
+                    <label for="exampleInputEmail1">Contraseña</label>
+                    <input type="password" class="form-control" name="password" aria-describedby="emailHelp" placeholder="Contraseña">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Precio</label>
-                    <input type="number" class="form-control" name="precio" aria-describedby="emailHelp" placeholder="Precio">
+                    <label for="exampleInputEmail1">Repetir contraseña</label>
+                    <input type="password" class="form-control" name="password2" aria-describedby="emailHelp" placeholder="Repetir contraseña">
                 </div>
-                <button type="submit" class="btn btn-primary">Modificar producto</button>
+                <button type="submit" class="btn btn-primary">Crear usuario</button>
         </form>
     </div>
 

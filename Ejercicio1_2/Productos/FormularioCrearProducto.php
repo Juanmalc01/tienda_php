@@ -29,7 +29,7 @@ include '/db_config.php';
                     <a href="../showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="../showProfile.php" class="btn btn-primary">Perfil</a>
                     <a href="../administrador.php" class="btn btn-success">Administrador</a>
-                    <a class="btn btn-secondary" href="?">Gestionar usuarios</a>
+                    <a class="btn btn-secondary" href="administrarUsuarios.php">Gestionar usuarios</a>
                     <a href="../logout.php" class="btn btn-danger">Cerrar sesion</a>
                 </div>
             </div>
