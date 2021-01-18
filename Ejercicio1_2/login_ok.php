@@ -30,7 +30,16 @@ if ($numero == 0) {
 		echo "Login OK";
 		$_SESSION["nick_logueado"] = $nick;
 		$_SESSION["id"] = $id;
-		header("Location: tienda.php");
+
+		if ($nick == "admin"){
+			header("Location: administrador.php"); 
+		}
+
+		else{
+			header("Location: tienda.php");
+		}
+
+		
 	}
 }
 ?>

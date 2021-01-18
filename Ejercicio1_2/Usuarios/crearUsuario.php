@@ -52,6 +52,6 @@ if (isset($_POST["nick"]))
 }
 else 
 {
-	header("Location: register.html?alert=ERROR: No se puede introducir un nick en blanco");
+	header("Location: FormularioCrearUsuario.php?alert=ERROR: No se puede introducir un nick en blanco");
 }
 ?>
