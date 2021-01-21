@@ -38,19 +38,19 @@ include '/db_config.php';
             <form action="crearUsuario.php" method = "post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nick</label>
-                    <input type="text" class="form-control" name="nick" aria-describedby="emailHelp" placeholder="Nick">
+                    <input type="text" class="form-control" name="nick" aria-describedby="emailHelp" maxlength="20" minlength="3" placeholder="Nick">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email">
+                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" maxlength="20" minlength="3" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Contraseña</label>
-                    <input type="password" class="form-control" name="password" aria-describedby="emailHelp" placeholder="Contraseña">
+                    <input type="password" class="form-control" name="password" aria-describedby="emailHelp" maxlength="20" minlength="3" placeholder="Contraseña">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Repetir contraseña</label>
-                    <input type="password" class="form-control" name="password2" aria-describedby="emailHelp" placeholder="Repetir contraseña">
+                    <input type="password" class="form-control" name="password2" aria-describedby="emailHelp" maxlength="20" minlength="3" placeholder="Repetir contraseña">
                 </div>
                 <button type="submit" class="btn btn-primary">Crear usuario</button>
         </form>
