@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-01-2021 a las 16:31:22
+-- Tiempo de generación: 21-01-2021 a las 18:48:02
 -- Versión del servidor: 5.6.34
 -- Versión de PHP: 7.1.11
 
@@ -40,7 +40,79 @@ CREATE TABLE `compras_1` (
 --
 
 INSERT INTO `compras_1` (`producto_id`, `cantidad`, `total`, `fecha`) VALUES
-(2, 1, '220.00', '2021-01-14 16:27:38');
+(6, 3, '378.00', '2021-01-19 15:57:50');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras_2`
+--
+
+CREATE TABLE `compras_2` (
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `compras_2`
+--
+
+INSERT INTO `compras_2` (`producto_id`, `cantidad`, `total`, `fecha`) VALUES
+(3, 1, '345.00', '2021-01-14 19:33:51');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras_3`
+--
+
+CREATE TABLE `compras_3` (
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras_4`
+--
+
+CREATE TABLE `compras_4` (
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras_5`
+--
+
+CREATE TABLE `compras_5` (
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras_6`
+--
+
+CREATE TABLE `compras_6` (
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -61,8 +133,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `categoria`, `descripcion`, `precio`) VALUES
-(1, 'BMW', 'Coche', 'asdasd', '30.00'),
-(2, 'Pelo', 'Estetica', 'asdasd', '220.00');
+(6, 'Flauta', 'Viento', 'Larga', '126.00'),
+(7, 'Guitarra', 'Cuerda', 'No incluye cuerdas', '134.00'),
+(8, 'Banjo', 'Cuerda', 'Disponible en varios colores', '350.00'),
+(9, 'Tambor', 'Percusion', '', '100.00');
 
 -- --------------------------------------------------------
 
@@ -83,7 +157,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nick`, `email`, `password`, `admin`) VALUES
-(1, 'prueba', 'prueba@gmail.com', '$2y$10$7FaelVRzzrUWmcCmXL2qJ.zqv/Y/xEmvuzjjErb7CTnPR48VDbSW2', 0);
+(1, 'prueba', 'prueba@gmail.com', '$2y$10$7FaelVRzzrUWmcCmXL2qJ.zqv/Y/xEmvuzjjErb7CTnPR48VDbSW2', 0),
+(2, 'admin', 'admin@gmail.com', '$2y$10$0AMwWk96QV4smsQv2WIWuuD5cniOX5W4jHDzZEnJd1Y.uct/.Ezzy', 0);
 
 --
 -- Índices para tablas volcadas
@@ -93,6 +168,36 @@ INSERT INTO `usuarios` (`id`, `nick`, `email`, `password`, `admin`) VALUES
 -- Indices de la tabla `compras_1`
 --
 ALTER TABLE `compras_1`
+  ADD KEY `fk_compra_producto` (`producto_id`);
+
+--
+-- Indices de la tabla `compras_2`
+--
+ALTER TABLE `compras_2`
+  ADD KEY `fk_compra_producto` (`producto_id`);
+
+--
+-- Indices de la tabla `compras_3`
+--
+ALTER TABLE `compras_3`
+  ADD KEY `fk_compra_producto` (`producto_id`);
+
+--
+-- Indices de la tabla `compras_4`
+--
+ALTER TABLE `compras_4`
+  ADD KEY `fk_compra_producto` (`producto_id`);
+
+--
+-- Indices de la tabla `compras_5`
+--
+ALTER TABLE `compras_5`
+  ADD KEY `fk_compra_producto` (`producto_id`);
+
+--
+-- Indices de la tabla `compras_6`
+--
+ALTER TABLE `compras_6`
   ADD KEY `fk_compra_producto` (`producto_id`);
 
 --
@@ -115,13 +220,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
