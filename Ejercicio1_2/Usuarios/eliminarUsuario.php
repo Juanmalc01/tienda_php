@@ -1,3 +1,4 @@
+<!-- Eliminamos al usuario de la BD -->
 <?php
 session_start();
 include '../db_config.php';

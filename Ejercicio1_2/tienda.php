@@ -20,11 +20,13 @@ require_once __DIR__ . '/db_config.php';
 <body>
     <header>
 
+<!-- Barra de la pagina -->
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
                 <a href="#" class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
+                <!-- Botones de la barra -->
                 <div>
                     <a href="showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="showProfile.php" class="btn btn-primary">Perfil</a>
@@ -36,6 +38,7 @@ require_once __DIR__ . '/db_config.php';
 
     <main role="main">
 
+<!-- Mostramos las categorias -->
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Productos</h1>
@@ -50,6 +53,8 @@ require_once __DIR__ . '/db_config.php';
                          }
                          ?>
                      </select>
+                     
+                     <!-- Botones para ordenar los productos de mas caro a mas barato y viceversa -->
                      <?php if(isset($_GET['desc'])){?>
                      <a class="btn btn-secondary offset-2 col-2" href="?">€ Ascedente</a>
                      <?php }else{?>
@@ -70,6 +75,7 @@ require_once __DIR__ . '/db_config.php';
 
                     ?>
 
+<!-- Mostramos los productos -->
                         <div class="col-md-4 producto <?php echo ($fila['categoria']); ?>">
                             <div class="card mb-4 box-shadow">
                                 <div class="card-body">

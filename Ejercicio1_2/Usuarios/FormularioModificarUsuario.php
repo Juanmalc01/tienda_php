@@ -1,6 +1,5 @@
 <?php
-session_start();
-include '/db_config.php';
+include '../db_config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,11 +20,13 @@ include '/db_config.php';
 <body>
     <header>
 
+<!-- Barra de la pagina -->
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
                 <a class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
+                <!-- Botones de la barra -->
                 <div>
                     <a href="../administrador.php" class="btn btn-warning">Gestionar productos</a>
                     <a href="../logout.php" class="btn btn-danger">Cerrar sesion</a>
@@ -36,40 +37,51 @@ include '/db_config.php';
 
     <main role="main">
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <?php
-                $id=$_GET["id"];
-                echo $id;
-                         $instruccion = "select * from usuarios where id = '$id'";
-                         $resultado = mysqli_query($con, $instruccion);
-                        
-                          while ($fila = $resultado->fetch_assoc()) {
-                 
-                
-                 $nombre = $fila['nick']; 
-                
-                    }
-                    ?> 
-                <h1 class="jumbotron-heading">Perfil</h1>
-                <form action="modificarUsuario.php" method = "post">
-	                <div class="form-group">
-	                	<label>Nick:</label>
-	                	<input type="text"  class="form-control"  name="nick" required value="<?php echo $nombre; ?>"/>
-                    </div>
-                    <div  class="form-group">
-	                	<label>Email: </label>
-	                	<input type="email" class="form-control"  name="email" required value="<?php echo ($fila['email']); ?>"/>
-                    </div>
-                    <div class="form-group">
-	                	<label>Contraseña:</label>
-	                	<input type="password" class="form-control"  name="password" value=""/>
-                    </div>
- 	                <button type="submit" value="Crear cuenta">Guardar</button>
-	            </form>             
-            </div>
-        </section>
-      
-    </main>
+    <?php
+
+    $id=$_GET['id'];
+
+    $modificar=modificarUsuario($_GET['id']);
+    function modificarUsuario($id){
+
+    $instruccion = "SELECT * FROM usuarios WHERE id = '".$id."'";
+    $resultado = $con -> query($instruccion) or die("Error".mysqli_error($con));
+    $fila = $resultado->fetch_assoc(); 
+    return [
+        $fila ['nick'],
+        $fila ['email'],
+        $fila ['password']
+    ]
+    }
+    ?>
+
+<!-- Formulario para modificar usuario -->
+	<form action="modificarUsuario.php" method = "post">
+	<table  class="table table-hover">
+	<tr>
+		<td>Nick: </td>
+		<td><input type="text" name="nick" value=<?php echo ($modificar[1]);?>/></td>
+		<td></td>
+    </tr>
+    <tr>
+		<td>Email: </td>
+		<td><input type="email" name="email" maxlength="20" minlength="3" value=<?php echo ($modificar[2]);?>/></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Contraseña: </td>
+		<td><input type="password" name="password" value=<?php echo ($modificar[3]);?>/></td>
+		<td></td>
+ 	</tr>	
+		<td></td>
+ 		<td><input type="submit" value="Guardar"/></td>
+	</table>
+	</form>
+			</div>
+		<div class="col-3"></div>
+	</div>
+</div>
+
+<script src="alert.js"></script>
 </body>
 </html>

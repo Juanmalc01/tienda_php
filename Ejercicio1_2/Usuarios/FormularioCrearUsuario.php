@@ -20,11 +20,13 @@ include '/db_config.php';
 <body>
     <header>
 
+<!-- Barra de la pagina -->
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
                 <a class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
+                <!-- Botones de la barra -->
                 <div>
                     <a href="../administrador.php" class="btn btn-warning">Gestionar productos</a>
                     <a href="../logout.php" class="btn btn-danger">Cerrar sesion</a>
@@ -35,6 +37,7 @@ include '/db_config.php';
 
     <div class="container">
         <br>
+        <!-- Formulario para crear usuario -->
             <form action="crearUsuario.php" method = "post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nick</label>

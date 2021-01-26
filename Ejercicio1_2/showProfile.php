@@ -21,11 +21,13 @@ require_once __DIR__ . '/db_config.php';
 <body>
     <header>
 
+<!-- Barra de la pagina -->
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
                 <a href="tienda.php" class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
+                <!-- Botones de la barra -->
                 <div>
                     <a href="showCart.php" class="btn btn-primary"><i class="bi bi-cart"></i></a>
                     <a href="showProfile.php" class="btn btn-primary">Perfil</a>
@@ -37,6 +39,7 @@ require_once __DIR__ . '/db_config.php';
 
     <main role="main">
 
+<!-- Mostramos los campos que se pueden modificar del perfil -->
         <section class="jumbotron text-center">
             <div class="container">
                 <?php

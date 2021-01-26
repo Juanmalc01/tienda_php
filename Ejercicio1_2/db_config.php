@@ -1,3 +1,4 @@
+<!-- Conexion con el servidor -->
 <?php
 
 $DB_SERVER="localhost";

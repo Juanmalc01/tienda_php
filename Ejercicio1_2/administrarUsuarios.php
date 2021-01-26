@@ -20,11 +20,13 @@ require_once __DIR__ . '/db_config.php';
 <body>
     <header>
 
+<!-- Barra de la pagina -->
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
                 <a class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
+                <!-- Botones de la barra -->
                 <div>
                     <a href="administrador.php" class="btn btn-warning">Gestionar productos</a>
                     <a href="/logout.php" class="btn btn-danger">Cerrar sesion</a>
@@ -35,6 +37,7 @@ require_once __DIR__ . '/db_config.php';
 
     <main role="main">
 
+    <!-- Boton para crear un usuario -->
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Administrar usuarios</h1>
@@ -47,6 +50,7 @@ require_once __DIR__ . '/db_config.php';
             <div class="container">
                 <div class="row">
 
+                <!-- Mostramos los usuarios -->
                 <?php
                     $order = isset($_GET['desc']) ? 'desc' : 'asc';
                     $instruccion = "select * from usuarios order by nick ".$order;
@@ -64,6 +68,7 @@ require_once __DIR__ . '/db_config.php';
                                         <div class="btn-group">
                                             <div class="input-group mb-3">
                                                     <div class="input-group-append">
+                                                        <!-- Botones para eliminar o modificar usuario -->
                                                         <a href="Usuarios/eliminarUsuario.php?id=<?php echo ($fila['id']);?>" class="btn btn-danger">Eliminar</a>
                                                         <a href="Usuarios/FormularioModificarUsuario.php?id=<?php echo ($fila['id']);?>" class="btn btn-sm btn-outline-secondary">Modificar</a>
                                                     </div>

@@ -1,3 +1,4 @@
+<!-- Creamos el nuevo producto en la BD -->
 <?php
 include '../db_config.php';
 	

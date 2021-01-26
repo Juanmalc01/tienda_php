@@ -23,11 +23,13 @@ $total = 0;
 <body>
     <header>
 
+<!-- Barra de la pagina -->
         <div class="navbar navbar-dark bg-dark box-shadow">
             <div class="container d-flex justify-content-between">
                 <a href="/tienda.php" class="navbar-brand d-flex align-items-center">
                     <strong>Tienda</strong>
                 </a>
+                <!-- Botones de la barra -->
                 <div>
                     <a href="showProfile.php" class="btn btn-primary">Perfil</a>
                     <a href="/logout.php" class="btn btn-danger">Cerrar sesion</a>
@@ -38,6 +40,7 @@ $total = 0;
 
     <main role="main">
 
+<!-- Mostramos el contenido del carrito -->
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Carrito</h1>
@@ -85,9 +88,11 @@ $total = 0;
                     </tbody>
                 </table>
                 <h3>Total: <?php print $total?> €</h3>
+                <!-- Boton para comprar o para volver a la tienda -->
                 <a href="tienda.php" class="btn btn-primary">Seguir comprando</a>
                 <a href="buyCart.php" class="btn btn-success">Comprar</a>
                 <?php 
+                // Si no hay productos en el carrito se mostrara el sigiente mensaje
                 }else{
                     ?>
                     <h3>No hay productos en el carrito</h3>
@@ -104,6 +109,7 @@ $total = 0;
     function isNumeric(num){
         return !isNaN(num)
     }
+    // Le permitimos cambiar la cantidad de productos
     function edit(id,cantidad){
         var num = prompt("¿Quiere cambia las unidades del producto?",cantidad);
         if(isNumeric(num) && parseInt(num) > 0){

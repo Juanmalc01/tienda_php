@@ -24,17 +24,22 @@ if ($numero == 0) {
 		$id = $fila["id"];
 	}
 
+	// Si la contraseña es incorrecta
 	if (!password_verify($password, $password2)) {
 		header("Location: login.html?alert=Contraseña incorrecta");
+	
+	// Si la contraseña es correcta
 	} else {
 		echo "Login OK";
 		$_SESSION["nick_logueado"] = $nick;
 		$_SESSION["id"] = $id;
 
+		// Si el nombre del usuario es admin le enviara al panel de administrador
 		if ($nick == "admin"){
 			header("Location: administrador.php"); 
 		}
 
+		// Si no es admin lo enviara a la tienda
 		else{
 			header("Location: tienda.php");
 		}

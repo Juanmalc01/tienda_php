@@ -1,3 +1,4 @@
+<!-- Eliminamos el producto de la BD -->
 <?php
 session_start();
 include '../db_config.php';

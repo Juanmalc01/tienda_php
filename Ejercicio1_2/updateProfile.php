@@ -8,11 +8,14 @@ if (isset($_POST["nick"]) && isset($_POST["email"]))
         $instruccion = "UPDATE usuarios SET nick =  '".$_POST["nick"]."', email = '".$_POST["email"]."', password = '".$passwordc."' 
         where id = ".$_SESSION['id'].";";
 
+// Actualizamos el perfil
     }else{
         $instruccion = "UPDATE usuarios SET nick =  '".$_POST["nick"]."', email = '".$_POST["email"]."' where id = ".$_SESSION['id'].";";
     }
     $res = mysqli_query($con, $instruccion);
     $_SESSION["nick_logueado"] = $_POST["nick"];
+
+    // Mensajes que se mostraran
     if(!$res){
         header('Location: tienda.php?alert=No pudo actualizar el perfil' );
     }else{

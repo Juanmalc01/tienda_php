@@ -7,6 +7,7 @@ if (isset($_POST["nick"]))
 	$nick = $_POST["nick"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
+	// Se comprueba si la contraseña coincide con confirmar contraseña
 	if($_POST["password"] !== $_POST["password2"]){
 		header("Location: register.html?alert=Las contraseñas deben coincidir");
 		die();
